@@ -16,6 +16,7 @@ sudo apt update
 
 ## Install Node | Note this ones only for Ubuntu Distributions
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
 sudo apt-get install -y nodejs
 
 ## Install angular CLI
