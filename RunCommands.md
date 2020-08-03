@@ -30,3 +30,6 @@ CD DevOps-Final-Project/spring-petclinic-angular
 
 ## Install project prerequisits
 npm install
+
+## Then run the application on local host
+ng serve --open --host 0.0.0.0
