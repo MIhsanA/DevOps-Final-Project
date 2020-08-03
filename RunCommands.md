@@ -5,6 +5,7 @@ az vm create --resource-group resourcegroupname --name vmname --image UbuntuLTS 
 
 ## Open Port 4200 & 80
 az vm open-port --port 4200 --resource-group resourcegroupname --name vmname
+
 az vm open-port --port 80 --resource-group resourcegroupname --name vmname
 
 ## Connect to VM
@@ -12,6 +13,7 @@ ssh username@ipaddress
 
 ## Update Apt 
 sudo apt install
+
 sudo apt update
 
 ## Install Node | Note this ones only for Ubuntu Distributions
