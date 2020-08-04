@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+        petclinic:
+                image: andrem132/sp-rest
+                build: ./
+
+        frontend:
+                image: andrem132/sp-angular
+                build: ./
+                ports:
+                        - '4200:4200'
