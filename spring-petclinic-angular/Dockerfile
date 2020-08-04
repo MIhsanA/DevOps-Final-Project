@@ -3,8 +3,7 @@ COPY package.json package-lock.json ./
 RUN npm set progress=false && npm config set depth 0 && npm cache clean --force
 WORKDIR /app
 COPY . .
+EXPOSE 4200
 RUN npm run build --prod
- 
-#stage2
-FROM nginx:1.17.1-alpine
-COPY --from=build-step /app/docs /usr/share/nginx/html
+
+CMD ng server --host 0.0.0.0
