@@ -1,12 +1,16 @@
-FROM springcommunity/spring-petclinic-rest
+FROM maven:latest as build-stage
 
 COPY . .
 
+RUN mvn package
+ 
 
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk-alpine as prod-stage
 
-ARG JAR_FILE=target/*.jar
+WORKDIR /app
 
-COPY ${JAR_FILE} app.jar
+COPY --from=build-stage ./target/spring-petclinic-rest-2.2.5.jar .
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar", "spring-petclinic-rest-2.2.5.jar"]
+
+
