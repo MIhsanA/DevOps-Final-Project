@@ -26,6 +26,28 @@ resource "azurerm_subnet" "internal" {
   address_prefix       = "10.0.2.0/24"
 }
 
+resource "azurerm_public_ip" "tfpublicip" {
+  name                         = "PIP1"
+  location                     = "uksouth"
+  resource_group_name          = "FinalRG"
+  allocation_method  = "Static"
+
+  tags = {
+    environment = "development"
+  }
+}
+
+resource "azurerm_public_ip" "tfpublicip2" {
+  name                         = "PIP2"
+  location                     = "uksouth"
+  resource_group_name          = "FinalRG"
+  allocation_method  = "Static"
+
+  tags = {
+    environment = "development"
+  }
+}
+
 resource "azurerm_network_interface" "main" {
   name                = "terraformNIC"
   location            = azurerm_resource_group.main.location
@@ -35,6 +57,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "testconfiguration1"
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_public_ip.tfpublicip.id
   }
 }
 
@@ -47,6 +70,7 @@ resource "azurerm_network_interface" "worker" {
     name                          = "testconfiguration2"
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = azurerm_public_ip.tfpublicip2.id
   }
 }
 
