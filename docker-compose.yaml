@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+        petclinic:
+                image: andrem132/sp-rest
+                build: ./spring-petclinic-rest 
+                ports:
+                - target: 9966
+                  published: 9966
+                  
+
+        frontend:
+                image: andrem132/sp-angular
+                build: ./spring-petclinic-angular
+                ports:
+                - target: 4200
+                  published: 4200
+                  protocol: tcp
