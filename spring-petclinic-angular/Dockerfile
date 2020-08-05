@@ -1,9 +1,6 @@
-FROM node:10-alpine as build-step
-COPY package.json package-lock.json ./
-RUN npm set progress=false && npm config set depth 0 && npm cache clean --force
-RUN npm install
+FROM node:latest as build-step
 WORKDIR /app
-COPY . .
+COPY . /app
+RUN npm install -g @angular/cli@latest
 EXPOSE 4200
-RUN npm run build --prod
-ENTRYPOINT ["ng","server","--host", "0.0.0.0"]
+ENTRYPOINT ["ng","serve","--host", "0.0.0.0", "--port", "4200"]
