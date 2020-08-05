@@ -50,66 +50,58 @@ resource "azurerm_network_interface" "worker" {
   }
 }
 
-resource "azurerm_virtual_machine" "manager" {
-  name                  = "swarmmanager"
-  location              = "uksouth"
-  resource_group_name   = "FinalRG"
-  network_interface_ids = ["${azurerm_network_interface.main.id}"]
-  vm_size               = "Standard_DS1_v2"
+resource "azurerm_linux_virtual_machine" "manager" {
+  name                = "manager"
+  resource_group_name = "FinalRG"
+  location            = "uksouth"
+  size                = "Standard_F2"
+  admin_username      = "Team2"
+  network_interface_ids = [
+    azurerm_network_interface.main.id,
+  ]
 
-  storage_image_reference {
+  admin_ssh_key {
+    username   = "Team2"
+    public_key = file("~/.ssh/id_rsa.pub")
+  }
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
-  }
-  storage_os_disk {
-    name              = "managerdisk"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "Standard_LRS"
-  }
-  os_profile {
-    computer_name  = "swarmmanagerhost"
-    admin_username = "ekurbiba"
-    admin_password = "Password1234!"
-  }
-  os_profile_linux_config {
-    disable_password_authentication = false
-  }
-  tags = {
-    environment = "development"
   }
 }
 
-resource "azurerm_virtual_machine" "worker" {
-  name                  = "swarmworker"
-  location              = "uksouth"
-  resource_group_name   = "FinalRG"
-  network_interface_ids = ["${azurerm_network_interface.worker.id}"]
-  vm_size               = "Standard_DS1_v2"
+resource "azurerm_linux_virtual_machine" "worker" {
+  name                = "worker"
+  resource_group_name = "FinalRG"
+  location            = "uksouth"
+  size                = "Standard_F2"
+  admin_username      = "Team2"
+  network_interface_ids = [
+    azurerm_network_interface.worker.id,
+  ]
 
-  storage_image_reference {
+  admin_ssh_key {
+    username   = "Team2"
+    public_key = file("~/.ssh/id_rsa.pub")
+  }
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
-  }
-  storage_os_disk {
-    name              = "workerdisk"
-    caching           = "ReadWrite"
-    create_option     = "FromImage"
-    managed_disk_type = "Standard_LRS"
-  }
-  os_profile {
-    computer_name  = "swarmworker"
-    admin_username = "ekurbiba"
-    admin_password = "Password1234!"
-  }
-  os_profile_linux_config {
-    disable_password_authentication = false
-  }
-  tags = {
-    environment = "development"
   }
 }
