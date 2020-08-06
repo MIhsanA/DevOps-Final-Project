@@ -1,6 +1,7 @@
 - name: "Install docker module"
   pip:
     name:
+    - setuptools
     - docker
     - jsondiff
 - name: "Get keys"
