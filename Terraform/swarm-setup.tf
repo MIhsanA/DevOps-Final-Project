@@ -28,8 +28,8 @@ resource "azurerm_subnet" "internal" {
 
 resource "azurerm_public_ip" "tfpublicip" {
   name                         = "PIP1"
-  location                     = "uksouth"
-  resource_group_name          = "FinalRG"
+  location                     = azurerm_resource_group.main.location
+  resource_group_name          = azurerm_resource_group.main.name
   allocation_method  = "Static"
 
   tags = {
@@ -39,8 +39,8 @@ resource "azurerm_public_ip" "tfpublicip" {
 
 resource "azurerm_public_ip" "tfpublicip2" {
   name                         = "PIP2"
-  location                     = "uksouth"
-  resource_group_name          = "FinalRG"
+  location                     = azurerm_resource_group.main.location
+  resource_group_name          = azurerm_resource_group.main.name
   allocation_method  = "Static"
 
   tags = {
@@ -76,8 +76,8 @@ resource "azurerm_network_interface" "worker" {
 
 resource "azurerm_linux_virtual_machine" "manager" {
   name                = "manager"
-  resource_group_name = "FinalRG"
-  location            = "uksouth"
+  resource_group_name = azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
   size                = "Standard_F2"
   admin_username      = "Team2"
   disable_password_authentication = true
@@ -105,8 +105,8 @@ resource "azurerm_linux_virtual_machine" "manager" {
 
 resource "azurerm_linux_virtual_machine" "worker" {
   name                = "worker"
-  resource_group_name = "FinalRG"
-  location            = "uksouth"
+  resource_group_name = azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
   size                = "Standard_F2"
   admin_username      = "Team2"
   disable_password_authentication = true
@@ -131,3 +131,4 @@ resource "azurerm_linux_virtual_machine" "worker" {
     version   = "latest"
   }
 }
+
