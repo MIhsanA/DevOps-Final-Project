@@ -80,6 +80,7 @@ resource "azurerm_linux_virtual_machine" "manager" {
   location            = "uksouth"
   size                = "Standard_F2"
   admin_username      = "Team2"
+  disable_password_authentication = true
   network_interface_ids = [
     azurerm_network_interface.main.id,
   ]
@@ -108,6 +109,7 @@ resource "azurerm_linux_virtual_machine" "worker" {
   location            = "uksouth"
   size                = "Standard_F2"
   admin_username      = "Team2"
+  disable_password_authentication = true
   network_interface_ids = [
     azurerm_network_interface.worker.id,
   ]
