@@ -7,5 +7,6 @@ sudo apt install python3-pip -y
 pip3 install --user ansible
 cd DevOps-Final-Project
 git pull
-cd DevOps-Final-Project/ansible
+cd ansible
+pwd
 ansible-playbook -i inventory playbook.yaml
