@@ -8,4 +8,4 @@ pip3 install --user ansible
 cd DevOps-Final-Project
 git pull
 cd DevOps-Final-Project/ansible
-pwd
+ansible-playbook -i inventory playbook.yaml
