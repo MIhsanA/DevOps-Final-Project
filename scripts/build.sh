@@ -13,8 +13,10 @@ pip3 install --user ansible
 # Verifying Ansible is installed will show on logs
 ansible --version
 #pull version
+cd
+pwd
 cd /DevOps-Final-Project
-git pull
+git checkout Development
 #locate to root
 cd /DevOps-Final-Project/ansible
 #Running inventory & playbooks
