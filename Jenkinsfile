@@ -1,19 +1,10 @@
 pipeline{
-    agent any
-    stages {
-        stage('Script Executable') {
-            steps {
-               sh "chmod +x ./scripts/*"
-                  }
-        }
-        stage('Build') {
-            steps{
-                sh './scripts/ansible.sh'
-            }
-           }
-        stage('Depoly') {
-            steps{
-                sh './scripts/deploy.sh'   
-            }}
-           }   
+  agent any
+  stages{
+    stage('Ansible Install & Verify (Also installs docker)'){
+      steps{
+        sh "bash scripts/ansible.sh"
+      }
+    } 
+  }
 }
