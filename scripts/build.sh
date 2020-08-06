@@ -6,13 +6,8 @@ sudo apt install python3-pip -y
 pip3 install --user ansible
 # Verifying Ansible is installed will show on logs
 ansible --version
-#pull version
-cd
-pwd
-cd /DevOps-Final-Project
-git checkout Development
 #locate to root
-cd /DevOps-Final-Project/ansible
+cd ansible
 #Running inventory & playbooks
 ansible-playbook -i inventory playbook.yaml
 EOF

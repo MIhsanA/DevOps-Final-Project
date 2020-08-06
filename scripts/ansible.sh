@@ -16,6 +16,6 @@ ansible --version
 cd /DevOps-Final-Project
 git pull
 #locate to root
-cd /DevOps-Final-Project/ansible
+cd ansible
 #Running inventory & playbooks
 ansible-playbook -i inventory playbook.yaml
