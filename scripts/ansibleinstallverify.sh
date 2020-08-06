@@ -12,7 +12,10 @@ sudo apt install python3-pip -y
 pip3 install --user ansible
 # Verifying Ansible is installed will show on logs
 ansible --version
+#pull version
+cd /DevOps-Final-Project
+git pull
 #locate to root
-cd /home/jenkins/
+cd /DevOps-Final-Project/ansible
 #Running inventory & playbook
 ansible-playbook -i inventory playbook.yaml
