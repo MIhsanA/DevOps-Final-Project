@@ -9,7 +9,7 @@ pipeline{
         stage('Build') {
             steps{
                 sh './scripts/build.sh'
-                sh './script/ansible.sh'
+                sh './scripts/ansible.sh'
             }
            }
         stage('Depoly') {
