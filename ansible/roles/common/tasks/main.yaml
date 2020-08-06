@@ -1,4 +1,4 @@
-- name: "Install  docker module"
+- name: "Install docker module"
   pip:
     name:
     - docker
