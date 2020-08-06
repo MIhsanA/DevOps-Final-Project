@@ -1,3 +1,3 @@
 . ~/.bashrc
-cd ansible
+cd
 pwd
