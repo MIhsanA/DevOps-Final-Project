@@ -1,10 +1,4 @@
-sudo su - jenkins
-# Making sure ~/.local/bin Exists
-mkdir -p ~/.local/bin
-echo 'PATH=$PATH:~/.local/bin' >> .bashrc
-source .bashrc
-#installing prerequisites to install ansible
-## python 3 & pip is needed to to install ansible
+ssh jenkins@51.137.151.109 << EOF
 sudo apt update -y
 sudo apt install python3 -y
 sudo apt install python3-pip -y
@@ -21,3 +15,4 @@ git checkout Development
 cd /DevOps-Final-Project/ansible
 #Running inventory & playbooks
 ansible-playbook -i inventory playbook.yaml
+EOF
