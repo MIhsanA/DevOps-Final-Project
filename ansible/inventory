@@ -1,5 +1,5 @@
 [managers]
-manager ansible_host=manager-vm
+manager ansible_host=manager
 
 [managers:vars]
 ansible_user=jenkins
@@ -7,9 +7,9 @@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=/home/jenkin/.ssh/id_rsa
 
 [workers]
-worker-1 ansible_host=worker-vm 
+worker-1 ansible_host=worker 
 
 [workers:vars]
 ansible_user=jenkins
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-ansible_ssh_private_key_file=/home/jenkins/.ssh/ansible_id_rsa
+ansible_ssh_private_key_file=/home/jenkins/.ssh/id_rsa
