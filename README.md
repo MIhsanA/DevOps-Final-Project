@@ -8,10 +8,8 @@
 ### 3. [Project Tracking](#PT)
 ### 4. [Risk Assessment](#Risk-Assessment)
 ### 5. [Implementation](#imp)
-#### 1. [build](#build)
-#### 2. [Deployment](#dep)
 ### 6. [Costs](#Costs)
-### 7. [Future Improvements](#Future-Improvements)
+
 
 ## Brief
 ### Objective
