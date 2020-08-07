@@ -21,7 +21,7 @@ IAAS – Terraform to preconfigure the live environment of the virtual machine a
 CI Server – The team had gone through a number of best approaches for the server options, the final chosen tool was Jenkins, functioning as the pipeline with webhooks linked to Git Hub, triggering builds.
 
 
-##Architecture 
+## Architecture 
 The tools for each component of the CI pipeline that the team had utilised:
 
 -	CI Server and deployment server - Jenkins
