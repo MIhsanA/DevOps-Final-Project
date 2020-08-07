@@ -15,4 +15,4 @@ cd
 pwd 
 cd DevOps-Final-Project
 cd Terraform
-pwd 
+terraform apply -auto-approve
