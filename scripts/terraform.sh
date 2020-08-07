@@ -11,6 +11,8 @@ unzip terraform_*_linux_*.zip
 sudo mv terraform /usr/local/bin
 rm terraform_*_linux_*.zip
 git clone https://github.com/MIhsanA/DevOps-Final-Project.git -b Development
-cd DevOps-Final-Project
 cd 
+pwd 
+cd DevOps-Final-Project
+cd Terraform
 pwd 
