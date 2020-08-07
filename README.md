@@ -34,26 +34,24 @@ The tools for each component of the CI pipeline that the team had utilised:
 -	Configuration management – Ansible
 
 ### Architect Diagram 
-![image](https://user-images.githubusercontent.com/65769901/89640002-883b9b80-d8a6-11ea-9ae0-6739aa541e95.png)
-
 ![Architect](./pics/architect.JPG)
 
 The architect diagram gives a breakdown of how the user interacts with the system, accessing the master virtual machine directly through the standard internet gateway. Microsoft Azure was used to host the private network virtual environment, connecting to Azure virtual machines for each role. The master VM hosting the main location of the application, producing the output to be displayed onto a HTML webpage. The master VM links within a Docker swarm cluster, connecting to the worker virtual machines via a generated token to join the network of machines together. These worker machines ensure the application has replicas, complying with the master VM’s requests and keeping the website active and live.
 
 ## Project Tracking
-![trello1](https://github.com/MIhsanA/DevOps-Final-Project/tree/Development/pics/trello_pt1.JPG)
+![trello1](./pics/trello_pt1.JPG)
 The project tracking was created using Trello board. The team broke down the objective at hand into tasks and stages within the first sprint of the project. The backlog holds the introductory stages needed for the project as well as the location for the repository that was being worked on. Team tasks was a section that outlined the initial most important tasks to complete in order to get a structure for the application. Deployment expands on the thought process of how to application is going to be deployed into a live environment, as the application was ran in AngularJS a number of new technologies such as Azure pipeline was to be researched. The documentation broke down some key features needed to be included within this README file.
 
-![trello2](https://github.com/MIhsanA/DevOps-Final-Project/tree/Development/pics/trello_pt2.JPG)
+![trello2](./pics/trello_pt2.JPG)
 The final project week had then been broken down into smaller stages for each corresponding day, partnering team members together to complete specific parts of the project together to get work done effectively and efficiently, keeping to a schedule to maintain time aspects. These tasks were requirements in order for the objective to be complete, utilising the key tools between team members to work on. 
 
 ## Risk Assessment
 During the project many different potential risks arose during the production of the application, this including risks with the technologies that were being used and their functionality. The risks varied depending on how the application would be deployed as different technologies were brought in to aid with various factors. The risk assessment breaks down into describing the issue, the impact and risk level. It also includes who is responsible and how the issue could be mitigated.
 
 
-![ra1](https://github.com/MIhsanA/DevOps-Final-Project/tree/Development/pics/riskassessment.JPG)
+![ra1](./pics/riskassessment.JPG)
 
-![ra2](https://github.com/MIhsanA/DevOps-Final-Project/tree/Development/pics/riskassessment2.JPG)
+![ra2](./pics/riskassessment2.JPG)
 
 ## Implementation
 ### Terraform
@@ -65,12 +63,12 @@ Ansible is a configuration management tool that the team used to aid the deploym
 ### Jenkins Pipeline
 The CI Server used was Jenkins, a self-contained open source automation server used to automate all tasks such as the build stages, delivering and deploying. Jenkins works by jobs which contain steps to run the necessary files to automate the program. Linking directly to the Version Control System used (Github) via webooks, Jenkins used its pipeline design to stage the deployment of the pet clinic application. 
 
-![pipeline](https://github.com/MIhsanA/DevOps-Final-Project/tree/Development/pics/jenkins.png)
+![pipeline](./pics/jenkins.png)
 
 ## Deployment
 The application was deployed via Jenkins autonomous build, producing the pet clinic page accessible on a HTML webpage via a direct IP address with its correct port number. To display the front end the port ran on 4200, the back end port ran on 9966. As showing in the following screenshot is the successful run of the home page of the application. 
 
-![homepage](https://github.com/MIhsanA/DevOps-Final-Project/tree/Development/pics/petclinic.png)
+![homepage](./pics/cipipeline.JPG)
 
 ## Costs
 The aim was to keep cost under £15 pounds for this project, the team only spent close to £8, being well under the budget.
