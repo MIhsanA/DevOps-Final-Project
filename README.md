@@ -54,6 +54,7 @@ During the project many different potential risks arose during the production of
 ![ra2](./pics/riskassessment2.JPG)
 
 ## Implementation
+![cipipline](./pics/cipipeline.JPG)
 ### Terraform
 Terraform is an open source application that the team decided to use for the project as it worked perfectly creating the detailed plan of setting up the correct virtual machines necessary and their resource group that features important variables like the location of the Azure VMs and resource group name so it can be accurately referenced. To avoid any chances of duplication of code, modules had been utilised to reference already created segments for reuse. The terraform set up the team’s Infrastructure via Docker swarm, creating all resource factors such as the IP addresses for each virtual machine and their respective public keys. This automated the creation of sharing the key between the master and worker virtual machines.
 
@@ -68,7 +69,7 @@ The CI Server used was Jenkins, a self-contained open source automation server u
 ## Deployment
 The application was deployed via Jenkins autonomous build, producing the pet clinic page accessible on a HTML webpage via a direct IP address with its correct port number. To display the front end the port ran on 4200, the back end port ran on 9966. As showing in the following screenshot is the successful run of the home page of the application. 
 
-![homepage](./pics/cipipeline.JPG)
+![homepage](./pics/petclinic.png)
 
 ## Costs
 The aim was to keep cost under £15 pounds for this project, the team only spent close to £8, being well under the budget.
