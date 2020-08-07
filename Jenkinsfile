@@ -6,10 +6,10 @@ pipeline{
         sh "bash scripts/ansible.sh"
       }
     } 
-  }
-    stage('Deploy'){
+	stage('Deploy'){
       steps{
         sh "bash scripts/deploy.sh"
       }
     } 
-}
+  }
+ }
