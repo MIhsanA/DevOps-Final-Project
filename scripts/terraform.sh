@@ -13,6 +13,6 @@ rm terraform_*_linux_*.zip
 git clone https://github.com/MIhsanA/DevOps-Final-Project.git -b Development
 cd DevOps-Final-Project
 git pull
-cd terraform
+cd Terraform
 pwd
 terrafom apply -auto-approve
