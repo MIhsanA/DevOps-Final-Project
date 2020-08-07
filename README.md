@@ -15,7 +15,7 @@
 ### Objective
 The goal of the final group project in summary was to plan, design and implement an AngularJS application’s development and deployment to a live environment, enabling the user to run the application via the web link. The idea was to utilise the technologies learnt within the course of the training and be able to showcase our team work on our chosen best practices and uses of the technologies at hand. The application environment must support the automation of build and deploy to a live environment, updating any changes made or additional progress directly to the chosen version control system. Costing for the project was to be included and calculated, and Microsoft Azure was our host platform.
 
-###Method of Approach
+### Method of Approach
 We were openly allowed to make use of all the technologies we had learnt over the training period, as the external applications were created via Javascript and the application’s front-end and back-end must be able to communicate as the data is retrieved by requesting from the front-end. The group made use of:
 IAAS – Terraform to preconfigure the live environment of the virtual machine and feature the relevant nodes’ build structures defining the swarm orchestration.
 CI Server – The team had gone through a number of best approaches for the server options, the final chosen tool was Jenkins, functioning as the pipeline with webhooks linked to Git Hub, triggering builds.
@@ -35,6 +35,7 @@ The tools for each component of the CI pipeline that the team had utilised:
 
 ### Architect Diagram 
 ![Architect](https://github.com/MIhsanA/DevOps-Final-Project/tree/Development/pics/architect.JPG)
+
 The architect diagram gives a breakdown of how the user interacts with the system, accessing the master virtual machine directly through the standard internet gateway. Microsoft Azure was used to host the private network virtual environment, connecting to Azure virtual machines for each role. The master VM hosting the main location of the application, producing the output to be displayed onto a HTML webpage. The master VM links within a Docker swarm cluster, connecting to the worker virtual machines via a generated token to join the network of machines together. These worker machines ensure the application has replicas, complying with the master VM’s requests and keeping the website active and live.
 
 ## Project Tracking
