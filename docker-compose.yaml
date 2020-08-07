@@ -21,4 +21,6 @@ services:
       - rest-api
     ports:
       - 4200:4200
+volumes: 
+  springapp:
     

@@ -7,4 +7,11 @@ pipeline{
       }
     } 
   }
+  stages{
+    stage('Deploy'){
+      steps{
+        sh "bash scripts/deploy.sh"
+      }
+    } 
+  }
 }
