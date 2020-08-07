@@ -5,6 +5,8 @@ services:
     build: ./nginx
     ports:
       - 80:80
+    depends_on:
+            - sp-ang
     
 
   rest-api:
