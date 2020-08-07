@@ -12,7 +12,7 @@
 
 
 ## Brief
-### Objective
+### Objectives
 The goal of the final group project in summary was to plan, design and implement an AngularJS application’s development and deployment to a live environment, enabling the user to run the application via the web link. The idea was to utilise the technologies learnt within the course of the training and be able to showcase our team work on our chosen best practices and uses of the technologies at hand. The application environment must support the automation of build and deploy to a live environment, updating any changes made or additional progress directly to the chosen version control system. Costing for the project was to be included and calculated, and Microsoft Azure was our host platform.
 
 ### Method of Approach
