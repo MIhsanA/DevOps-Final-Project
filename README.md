@@ -34,7 +34,9 @@ The tools for each component of the CI pipeline that the team had utilised:
 -	Configuration management – Ansible
 
 ### Architect Diagram 
-![Architect](https://github.com/MIhsanA/DevOps-Final-Project/tree/master-final/pics/architect.JPG)
+![image](https://user-images.githubusercontent.com/65769901/89640002-883b9b80-d8a6-11ea-9ae0-6739aa541e95.png)
+
+![Architect](./pics/architect.JPG)
 
 The architect diagram gives a breakdown of how the user interacts with the system, accessing the master virtual machine directly through the standard internet gateway. Microsoft Azure was used to host the private network virtual environment, connecting to Azure virtual machines for each role. The master VM hosting the main location of the application, producing the output to be displayed onto a HTML webpage. The master VM links within a Docker swarm cluster, connecting to the worker virtual machines via a generated token to join the network of machines together. These worker machines ensure the application has replicas, complying with the master VM’s requests and keeping the website active and live.
 
